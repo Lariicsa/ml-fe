@@ -4,3 +4,29 @@
 @import "shared/_vars.scss";
 @import "shared/_mixins.scss";
 @import "shared/global.scss";
+
+@include font-face(
+  "proximanova-regular",
+  "../assets/fonts/proximanova-regular",
+  400,
+  "regular",
+  "woff2"
+);
+@include font-face(
+  "proximanova-regular",
+  "../assets/fonts/proximanova-light",
+  400,
+  "light",
+  "woff2"
+);
+
+@include font-face(
+  "proximanova-regular",
+  "../assets/fonts/proximanova-semibold",
+  600,
+  "semibold",
+  "woff2"
+);
+
+//components
+@import "./components/header.scss";

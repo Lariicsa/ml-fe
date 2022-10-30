@@ -1,0 +1,16 @@
+.header {
+  background-color: $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.6rem;
+
+  &__logo {
+    @include main-logo;
+    background-size: contain;
+    background-position: center;
+    height: 3.4rem;
+    width: 13.4rem;
+  }
+}
