@@ -1,0 +1,62 @@
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+//responsive
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop-m {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: ($tablet - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: ($mobile - 1px)) {
+    @content;
+  }
+}
+
+@mixin lowmobile {
+  @media screen and (max-width: $mobile-low) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media screen and (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}

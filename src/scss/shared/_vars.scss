@@ -1,0 +1,47 @@
+//Font
+$bold: 700;
+$semibold: 500;
+$medium: 600;
+$regular: 400;
+$font-primary: "Plus Jakarta Sans", sans-serif;
+
+//Font-size
+$regular-font-size: 1.6rem;
+$smal-font-size: 1.4rem;
+$small-title-size: 2.4rem;
+$regular-title-size: 2.8rem;
+$big-title-size: 4.6rem;
+
+//Colors
+$primary: #ffe600;
+$secondary: #3483fa;
+$dark-1: #333333;
+$dark-2: #666666;
+$dark-3: #999999;
+$dark-4: #eeeeee;
+
+$light-1: #ffffff;
+
+$accent: $secondary;
+
+//Larges
+$large: 100%;
+$medium: 48%;
+$small: 31%;
+$maxwidth-containner: 1440px;
+$maxwidth-inner-containner: 1200px;
+
+//Breakpoints
+$mobile-low: 320px !default;
+$mobile: 648px !default;
+$tablet: 769px !default;
+$tablet-landscape: 1024px !default;
+$desktop: 1280px !default;
+
+//RYTHMS
+$global-rythm: 0.8rem;
+$global-padding: 0 1.6rem;
+$global-padding-mobile: 0 1.6rem;
+
+//Box
+$radius: 0.4rem;
