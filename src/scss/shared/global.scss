@@ -76,10 +76,7 @@ h3 {
   }
   &__inner {
     @extend .container;
+    // border: 0.1rem dotted tomato;
     max-width: $maxwidth-inner-containner;
-    overflow: hidden;
-    @include until($tablet-landscape) {
-      padding: 0 1.2rem;
-    }
   }
 }

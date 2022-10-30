@@ -1,10 +1,17 @@
 .header {
   background-color: $primary;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 5.6rem;
+
+  &__container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 10% 54% 32%;
+    grid-column-gap: 1%;
+  }
 
   &__logo {
     @include main-logo;
@@ -12,5 +19,19 @@
     background-position: center;
     height: 3.4rem;
     width: 13.4rem;
+  }
+
+  &__promo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34rem;
+    height: 3.9rem;
+    & > img {
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: auto;
+    }
   }
 }

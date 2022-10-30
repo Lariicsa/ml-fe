@@ -1,0 +1,39 @@
+.finder {
+  display: flex;
+  background-color: $light-1;
+  border-radius: $radius * 0.5;
+  box-shadow: 0 0.1rem 0.2rem 0 rgb(0 0 0 / 20%);
+  height: 3.9rem;
+  position: relative;
+
+  &__input {
+    background-color: transparent;
+    border-radius: inherit;
+    border: none;
+    font-size: $regular-font-size;
+    color: $dark-3;
+    text-indent: 1.5rem;
+    font-weight: light;
+    width: calc(100% - 4.6rem);
+    height: 100%;
+
+    &::placeholder {
+      color: rgba($dark-3, 0.5);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 4.6rem;
+    height: 100%;
+    background-color: transparent;
+    &::before {
+      content: "";
+      display: block;
+      height: 2.6rem;
+      border-left: 0.1rem solid #e6e6e6;
+      position: absolute;
+      top: 0.6rem;
+    }
+  }
+}
