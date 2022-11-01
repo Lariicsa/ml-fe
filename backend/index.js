@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: false }));
 app.options("*", cors());
 
-app.set("port", process.env.PORT || 4000);
+app.set("port", 1987);
 
 app.listen(app.get("port"));
 console.log(
