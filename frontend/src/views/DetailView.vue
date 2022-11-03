@@ -1,5 +1,6 @@
 <template>
   <div class="container__inner">
+    <BreadCrumb />
     <div class="carddetail__wrapper">
       <div class="carddetail">
         <div class="carddetail__image">
@@ -21,10 +22,12 @@
 </template>
 
 <script>
+import BreadCrumb from "@/components/Breadcrumb";
 import ButtonUI from "@/components/Button";
 export default {
   name: "DetailView",
   components: {
+    BreadCrumb,
     ButtonUI,
   },
 
