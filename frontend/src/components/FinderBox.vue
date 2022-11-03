@@ -1,33 +1,39 @@
 <template>
-  <div class="finder">
+  <form class="finder" @submit.prevent="search()">
     <input
       class="finder__input"
       :name="inputName"
       :placeholder="placeholderInput"
+      type="text"
       ref="input"
       :value="value"
       @input="updateValue()"
       @keyup="keyup()"
       @keyup.enter="keyupEnter()"
-      @blur="blur()"
+      @blur="onBlur()"
     />
-    <span class="finder__icon" @click="iconClick"></span>
-  </div>
+    <span class="finder__icon" @click="search()"></span>
+  </form>
 </template>
 <script>
 export default {
   name: "FinderBox",
 
   props: {
-    inputName: {
+    textUrl: {
       type: String,
     },
-    placeholderInput: {
-      type: String,
-    },
-    value: {
-      type: String,
-    },
+    phText: String,
+    textIn: String,
+    value: String,
+    autofocus: Boolean,
+  },
+
+  data() {
+    return {
+      textTyped: this.textIn,
+      isOpen: false,
+    };
   },
 
   mounted() {
