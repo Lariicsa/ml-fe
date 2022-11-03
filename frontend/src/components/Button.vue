@@ -1,6 +1,5 @@
 <template>
   <button
-    v-if="isSubmit"
     :class="`btn__${ui}`"
     @click="onClick"
     :type="type"

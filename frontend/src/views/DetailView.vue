@@ -5,7 +5,7 @@
       <span class="carddetail__status">Nuevo · 234 vendidos</span>
       <h1 class="carddetail__title">Deco reverse Sombrero Oxford</h1>
       <h2>$ 1.980</h2>
-      <ButtonUI></ButtonUI>
+      <ButtonUI text="Comprar"></ButtonUI>
     </div>
   </div>
 </template>

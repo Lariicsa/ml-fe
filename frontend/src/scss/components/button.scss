@@ -1,0 +1,6 @@
+.btn {
+  &__primary {
+    @extend .btn;
+    @include button(100%, "primary");
+  }
+}
