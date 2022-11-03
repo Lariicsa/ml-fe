@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  grid-template-columns: 24% 56% 24%;
+  grid-template-columns: auto 58% 24%;
   column-gap: 0;
   row-gap: 0;
   height: 100%;
@@ -29,7 +29,7 @@
   &__image {
     border-radius: $radius;
     display: flex;
-    margin: auto;
+    margin: auto 1.6rem;
     width: 100%;
     max-width: 18rem;
     height: 100%;
