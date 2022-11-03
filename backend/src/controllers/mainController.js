@@ -1,7 +1,7 @@
 const main = {
   index: function (req, res) {
     return res.send(
-      "testing main"
+      "Running Main route"
     );
   },
 };

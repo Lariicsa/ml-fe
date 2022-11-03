@@ -19,9 +19,9 @@ app.options("*", cors());
 
 app.set("port", 1987);
 
+const main = require("./src/routes/mainRouter");
+
+app.use("/", main);
+
 app.listen(app.get("port"));
-console.log(
-  "Server is ready on port",
-  app.get("port"),
-  "MeLi Server is running!"
-);
+console.log(`Meli Server is ready on port http://localhost:${app.get("port")}`);
