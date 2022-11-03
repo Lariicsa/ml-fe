@@ -2,7 +2,10 @@
   <header class="header">
     <div class="header__container container__inner">
       <div class="header__logo"></div>
-      <FinderBox placeholderInput="Buscar productos, marcas y más..." />
+      <FinderBox
+        inputName="meliFinder"
+        placeholderInput="Buscar productos, marcas y más..."
+      />
       <router-link class="header__promo" to="/">
         <img src="../assets/promo_disney.webp" alt="FREETRIAL" />
       </router-link>

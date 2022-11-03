@@ -23,15 +23,26 @@ export default {
     textUrl: {
       type: String,
     },
-    phText: String,
-    textIn: String,
-    value: String,
-    autofocus: Boolean,
+    inputName: {
+      type: String,
+    },
+    placeholderInput: {
+      type: String,
+    },
+    typedData: {
+      type: String,
+    },
+    value: {
+      type: String,
+    },
+    autofocus: {
+      type: Boolean,
+    },
   },
 
   data() {
     return {
-      textTyped: this.textIn,
+      textTyped: this.typedData,
       isOpen: false,
     };
   },
