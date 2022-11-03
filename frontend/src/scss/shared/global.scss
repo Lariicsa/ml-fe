@@ -27,17 +27,18 @@ h3 {
 }
 
 h1 {
-  font-size: $regular-title-size;
-  line-height: $big-title-size + $global-rythm;
+  font-size: $small-title-size;
+  line-height: $small-title-size;
 }
 
 h2 {
   font-size: $big-title-size;
-  line-height: $small-title-size + 2rem;
+  line-height: $big-title-size;
+  font-weight: $regular;
 }
 h3 {
   font-size: $small-title-size;
-  line-height: $small-title-size + $global-rythm;
+  line-height: $small-title-size;
 }
 
 .space {

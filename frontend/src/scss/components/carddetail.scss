@@ -1,3 +1,63 @@
 .carddetail {
-  
+  display: grid;
+  grid-template-columns: 72% 28%;
+  width: 100%;
+  height: auto;
+
+  @include tablet {
+    grid-template-columns: 64% 36%;
+  }
+
+  @include mobile {
+    grid-template-columns: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+
+    & > img {
+      display: block;
+      width: 100%;
+      min-height: 48rem;
+      @include tablet {
+        min-height: 24rem;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+  }
+
+  &__status {
+    margin: 0.8rem 0;
+  }
+  &__price,
+  &__button {
+    margin: 1.6rem 0;
+  }
+
+  &__button {
+    width: 100%;
+  }
 }
