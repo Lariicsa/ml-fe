@@ -1,5 +1,5 @@
 <template>
-  <div class="container__main">
+  <div class="container__inner">
     <BreadCrumb />
     <CardResume></CardResume>
     <CardResume></CardResume>

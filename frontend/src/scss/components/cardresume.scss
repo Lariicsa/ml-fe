@@ -13,10 +13,20 @@
     margin: 0.8rem auto;
     height: 18rem;
     width: 100%;
+    position: relative;
+    &::after {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      content: "";
+      display: flex;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -0.8rem;
+    }
   }
 
   &__image {
-    background-color: $dark-3;
     border-radius: $radius;
     display: flex;
     margin: auto;
