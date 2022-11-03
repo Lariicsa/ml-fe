@@ -3,7 +3,7 @@
     <div class="card">
       <figure class="card__image">
         <img
-          src="https://http2.mlstatic.com/D_NQ_NP_2X_664381-MLM47513557006_092021-F.webp"
+          src="https://http2.mlstatic.com/D_Q_NP_2X_629197-MLM45309720387_032021-AB.webp"
           alt="alt description"
         />
       </figure>
