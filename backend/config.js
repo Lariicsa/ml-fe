@@ -1,6 +1,6 @@
-const mainUrls = {
-  searching: "https://api.mercadolibre.com/sites/MLA/search?q=",
+const baseUrls = {
   detail: "https://api.mercadolibre.com/items/",
+  searching: "https://api.mercadolibre.com/sites/MLA/search?q=",
 };
 
-module.exports = mainUrls;
+module.exports = baseUrls;
