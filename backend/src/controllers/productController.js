@@ -10,9 +10,11 @@ const product = {
     }
   },
 
-  getProductDescription: async (req, res) => {
+  getProductSearch: async (req, res) => {
     try {
       const response = await productDetail(req.param.id);
+
+      
       res.json(response);
     } catch (error) {
       console.error(error);
