@@ -18,4 +18,4 @@ const main = require("./src/routes/mainRouter");
 const products = require("./src/routes/productRouter");
 
 app.use("/", main);
-app.use("/products", products);
+app.use("/items", products);
