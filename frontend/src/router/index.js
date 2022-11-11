@@ -11,9 +11,14 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/items/:search?",
+    name: "ListView",
+    component: () => import("@/views/ListView.vue"),
+  },
 
   {
-    path: "/MLM/:slug*",
+    path: "/items/:id*",
     name: "DetailView",
     component: () => import("@/views/DetailView.vue"),
     props: true,

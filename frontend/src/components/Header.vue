@@ -15,6 +15,7 @@
   </header>
 </template>
 <script>
+/*eslint-disable*/
 import FinderBox from "@/components/FinderBox.vue";
 export default {
   name: "HeaderUI",
@@ -29,8 +30,18 @@ export default {
     };
   },
   methods: {
-    getProductSearch() {
-      this.$store.dispatch("getProductSearch", this.textTyped);
+    getProductSearch(text) {
+      if (this.textTyped !== "") {
+        const URL_TEXT = text.toLowerCase().replace(/[/, ' ']/g, "+");
+        this.$store.dispatch("getProductSearch", URL_TEXT).then(() => {
+          this.$router
+            .push({
+              name: "ListView",
+              query: { ...this.$route.query, search: URL_TEXT },
+            })
+            .catch((err) => {});
+        });
+      }
     },
   },
 };
