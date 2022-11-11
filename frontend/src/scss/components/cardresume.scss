@@ -5,6 +5,9 @@
   row-gap: 0;
   height: 100%;
   width: 100%;
+  @include until(1180px) {
+    grid-template-columns: auto 64% 8%;
+  }
 
   &__wrapper {
     display: flex;

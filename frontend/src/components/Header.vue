@@ -5,6 +5,8 @@
       <FinderBox
         inputName="meliFinder"
         placeholderInput="Buscar productos, marcas y más..."
+        @search="getProductSearch(textTyped)"
+        v-model="textTyped"
       />
       <router-link class="header__promo" to="/">
         <img src="../assets/promo_disney.webp" alt="FREETRIAL" />
@@ -19,6 +21,17 @@ export default {
 
   components: {
     FinderBox,
+  },
+
+  data() {
+    return {
+      textTyped: "",
+    };
+  },
+  methods: {
+    getProductSearch() {
+      this.$store.dispatch("getProductSearch", this.textTyped);
+    },
   },
 };
 </script>

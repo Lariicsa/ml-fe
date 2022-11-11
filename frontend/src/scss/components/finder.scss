@@ -13,12 +13,19 @@
     font-size: $regular-font-size;
     color: $dark-3;
     text-indent: 1.5rem;
-    font-weight: light;
+    font-weight: 400;
     width: calc(100% - 4.6rem);
     height: 100%;
 
     &::placeholder {
       color: rgba($dark-3, 0.5);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border: 0.1rem solid $dark-4;
+      font-weight: 400;
+      outline: 0;
     }
   }
 

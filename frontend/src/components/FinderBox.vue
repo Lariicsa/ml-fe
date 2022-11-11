@@ -8,9 +8,7 @@
       ref="input"
       :value="value"
       @input="updateValue()"
-      @keyup="keyup()"
       @keyup.enter="keyupEnter()"
-      @blur="onBlur()"
     />
     <span class="finder__icon" @click="search()"></span>
   </form>
@@ -55,14 +53,11 @@ export default {
     updateValue() {
       this.$emit("input", this.$refs.input.value);
     },
-    keyup() {
-      this.$emit("keyup");
+    search() {
+      this.$emit("search");
     },
     keyupEnter() {
       this.$emit("keyupEnter");
-    },
-    blur() {
-      this.$emit("blur");
     },
     iconClick() {
       this.$emit("iconClick");
