@@ -81,3 +81,73 @@ h3 {
     max-width: $maxwidth-inner-containner;
   }
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  overflow-wrap: break-word;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  &.md {
+    width: 48%;
+  }
+  &.sm {
+    width: 32%;
+  }
+  &.xcenter {
+    align-items: center;
+  }
+
+  &.sm,
+  &.md {
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  min-height: auto;
+  width: 100%;
+  overflow-wrap: break-word;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.bottom {
+    justify-content: flex-end;
+  }
+
+  &.md {
+    width: 48%;
+  }
+  &.sm {
+    width: 32.666%;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}

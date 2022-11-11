@@ -1,5 +1,5 @@
 <template>
-  <div class="card__wrapper">
+  <div class="card__wrapper" @click="onClick()">
     <div class="card">
       <figure class="card__image">
         <img :src="item.imageSource" alt="alt description" />
@@ -18,11 +18,16 @@
 export default {
   name: "CardResume",
   props: {
-    item:{
+    item: {
       type: Object,
-      default: null
+      default: null,
     },
+  },
 
+  methods: {
+    onClick() {
+      this.$emit("click");
+    },
   },
 };
 </script>

@@ -14,7 +14,7 @@
 import ButtonUI from "@/components/Button";
 export default {
   name: "CardDetail",
-  comments: {
+  components: {
     ButtonUI,
   },
 };

@@ -1,10 +1,11 @@
 <template>
-  <div class="cintainer__inner">
+  <div class="container__inner">
     <div class="row">
       <CardResume
         v-for="itemData in currentFoundItems"
         :item="itemData"
         :key="itemData.title"
+        @click="getItemDetail(itemData)"
       />
     </div>
   </div>
@@ -52,6 +53,10 @@ export default {
         return this.textTyped;
       }
     },
+
+    getItemDetail(itemData){
+      console.log(itemData)
+    }
   },
 
   computed: {
