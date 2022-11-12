@@ -30,9 +30,18 @@ import ButtonUI from "@/components/Button";
 import { mapActions } from "vuex";
 export default {
   name: "DetailView",
+
   components: {
     BreadCrumb,
     ButtonUI,
+  },
+
+  head: {
+    title: function () {
+      return {
+        inner: this.currentItemDetail.title,
+      };
+    },
   },
 
   mounted() {

@@ -14,6 +14,7 @@
   </div>
 </template>
 <script>
+/*eslint-disable*/
 import BreadCrumb from "@/components/Breadcrumb";
 import CardResume from "@/components/CardResume";
 export default {
@@ -33,6 +34,14 @@ export default {
     },
   },
 
+  head: {
+    title: function () {
+      return {
+        inner: this.textInPath,
+      };
+    },
+  },
+
   mounted() {
     this.getSeacrhOnLoad();
   },
@@ -40,21 +49,7 @@ export default {
   methods: {
     getSeacrhOnLoad() {
       if (this.textTyped !== "") {
-        const parsed = this.textTyped.split(" ");
-        const finalArray = [];
-        parsed.forEach((item) => {
-          const hasSpecial = item.includes("#");
-          if (hasSpecial) {
-            const splited = item.split("#").join("");
-            finalArray.push(splited);
-          } else {
-            finalArray.push(item);
-          }
-        });
-        const toSearch = finalArray.join("+");
-        return toSearch;
-      } else {
-        return this.textTyped;
+        this.textTyped = this.textInPath;
       }
     },
 
@@ -67,7 +62,7 @@ export default {
 
   computed: {
     textInPath() {
-      const FULL_PATH = this.$route.fullPath.slice(7, 1000).toString();
+      const FULL_PATH = this.$route.fullPath.slice(14, 1000).toString();
       const URL_TEXT = FULL_PATH.toLowerCase().replace(
         /%[a-fA-F0-9-2f][a-fA-F0-9-2F]/g,
         " "
