@@ -1,24 +1,7 @@
-# ml-fe-chllg
+# Test Práctico - Frontend
 
-## Project setup
-```
-npm install
-```
+## Table of Contents
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. [Backend](https://github.com/Lariicsa/ml-fe/tree/main/backend)
+1. [Frontend](https://github.com/Lariicsa/ml-fe/tree/main/frontend)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
