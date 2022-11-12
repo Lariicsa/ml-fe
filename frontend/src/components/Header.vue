@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__container container__inner">
-      <div class="header__logo"></div>
+      <router-link  class="header__logo" to="/"></router-link >
       <FinderBox
         inputName="meliFinder"
         placeholderInput="Buscar productos, marcas y más..."

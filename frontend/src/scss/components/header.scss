@@ -9,7 +9,7 @@
   &__container {
     margin: auto;
     display: grid;
-    grid-template-columns: 12% 56% 32%;
+    grid-template-columns: 8% 56% 36%;
     grid-column-gap: 0;
   }
 
@@ -17,8 +17,8 @@
     @include main-logo;
     background-size: contain;
     background-position: center;
-    height: 3.4rem;
-    width: 13.4rem;
+    height: 3.9rem;
+    width: 6.4rem;
   }
 
   &__promo {
@@ -30,7 +30,7 @@
     & > img {
       display: block;
       margin: 0;
-      width: 34rem;
+      max-width: 100%;
       height: auto;
     }
   }
