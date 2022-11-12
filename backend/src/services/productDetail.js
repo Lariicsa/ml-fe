@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { response } = require("express");
 const BASE_URL = require("../../config");
 
 const productsDetail = async (productId) => {

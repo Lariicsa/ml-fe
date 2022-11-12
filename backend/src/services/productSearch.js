@@ -8,11 +8,9 @@ const productSearch = async (param) => {
       { params: { limit: 4 } }
     );
 
-    const categories = response.data.filters.map((item) => {
+    const categories = response.data.available_filters.map((item) => {
       return item.values.map((ele) => {
-        return ele.path_from_root.map((prod) => {
-          return prod.name;
-        });
+        return ele.name
       });
     });
 
@@ -39,7 +37,7 @@ const productSearch = async (param) => {
         name: "Larissa",
         lastname: "Avila",
       },
-      categories: categories,
+      categories: categories[0],
       items: items,
     };
 

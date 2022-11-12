@@ -13,8 +13,8 @@ const product = {
 
   getProductSearch: async (req, res) => {
     try {
-      console.log('enter controller',req.query.search);
-      const response = await productSearch(req.query.search);
+      console.log('enter controller', req.query.q);
+      const response = await productSearch(req.query.q);
       res.json(response);
     } catch (error) {
       console.error(error);
