@@ -1,6 +1,9 @@
 <template>
   <div class="container__inner">
     <div class="row">
+      <BreadCrumb :items="currentCategories" />
+    </div>
+    <div class="row">
       <CardResume
         v-for="itemData in currentFoundItems"
         :item="itemData"
@@ -11,12 +14,13 @@
   </div>
 </template>
 <script>
+import BreadCrumb from "@/components/Breadcrumb";
 import CardResume from "@/components/CardResume";
-import { mapGetters } from "vuex";
 export default {
   name: "ListView",
 
   components: {
+    BreadCrumb,
     CardResume,
   },
 
@@ -62,7 +66,6 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["currentFoundItems"]),
     textInPath() {
       const FULL_PATH = this.$route.fullPath.slice(7, 1000).toString();
       const URL_TEXT = FULL_PATH.toLowerCase().replace(
@@ -74,6 +77,15 @@ export default {
 
     currentPath() {
       return this.$route.name;
+    },
+    currentCategories() {
+      if (this.$store.state.categories.length > 5) {
+        return undefined;
+      }
+      return this.$store.state.categories;
+    },
+    currentFoundItems() {
+      return this.$store.state.foundItems;
     },
   },
 };

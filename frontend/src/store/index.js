@@ -8,20 +8,30 @@ export default new Vuex.Store({
   state: {
     foundItems: [],
     itemDetail: {},
+    categories: [],
   },
 
   mutations: {
     SET_FOUND_ITEMS: (state, payload) => (state.foundItems = payload),
-    SET_ITEM_DETAIL: (state, payload) => {
-      state.itemDetail = payload;
-    },
+    SET_ITEM_DETAIL: (state, payload) => (state.itemDetail = payload),
+    SET_CATEGORIES: (state, payload) => (state.categories = payload),
   },
   actions: {
     async getProductSearch({ commit }, param) {
       try {
         const res = await getProductQuery(param);
         const DATA = res.data;
-        commit("SET_FOUND_ITEMS", DATA.items);
+        const ITEMS = DATA.items.map((item) => {
+          return {
+            imageSource: item.picture,
+            price: item.price.amount,
+            description: item.title,
+            location: item.state_name,
+            id: item.id,
+          };
+        });
+        commit("SET_FOUND_ITEMS", ITEMS);
+        commit("SET_CATEGORIES", DATA.categories);
         console.log("res", DATA);
       } catch (error) {
         console.log(error);
@@ -50,19 +60,5 @@ export default new Vuex.Store({
     },
   },
 
-  getters: {
-    currentFoundItems(state) {
-      const FORMATTED = state.foundItems.map((item) => {
-        return {
-          imageSource: item.picture,
-          price: item.price.amount,
-          description: item.title,
-          location: item.state_name,
-          id: item.id,
-        };
-      });
 
-      return FORMATTED;
-    },
-  },
 });
