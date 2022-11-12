@@ -77,8 +77,10 @@ h3 {
   }
   &__inner {
     @extend .container;
-    // border: 0.1rem dotted tomato;
     max-width: $maxwidth-inner-containner;
+    @include until(1280px){
+      padding: 0 1.6rem;
+    }
   }
 }
 

@@ -5,15 +5,18 @@
       <div class="carddetail">
         <div class="carddetail__image">
           <figure class="carddetail__image">
-            <img :src="imageSource" alt="alt description" />
+            <img
+              :src="currentItemDetail.imageSource"
+              :alt="currentItemDetail.title"
+            />
           </figure>
         </div>
         <div class="carddetail__info">
-          <span class="carddetail__status">Nuevo · 234 vendidos</span>
-          <h1 class="carddetail__title">Deco reverse Sombrero Oxford</h1>
-          <h2 class="carddetail__price">$ 1.980</h2>
+          <span class="carddetail__status">{{ currentItemDetail.status }}</span>
+          <h1 class="carddetail__title">{{ currentItemDetail.title }}</h1>
+          <h2 class="carddetail__price">{{ currentItemDetail.price }}</h2>
           <div class="carddetail__button">
-            <ButtonUI text="Comprar"></ButtonUI>
+            <ButtonUI text="Comprar" />
           </div>
         </div>
       </div>
@@ -24,6 +27,7 @@
 <script>
 import BreadCrumb from "@/components/Breadcrumb";
 import ButtonUI from "@/components/Button";
+import { mapActions } from "vuex";
 export default {
   name: "DetailView",
   components: {
@@ -31,11 +35,22 @@ export default {
     ButtonUI,
   },
 
-  props: {
-    imageSource: {
-      type: String,
-      default:
-        "https://http2.mlstatic.com/D_NQ_NP_2X_826416-MLM51485410736_092022-F.webp",
+  mounted() {
+    this.getProductDetail(this.itemId);
+    this.currentItemDetail;
+  },
+
+  methods: {
+    ...mapActions(["getProductDetail"]),
+  },
+
+  computed: {
+    currentItemDetail() {
+      return this.$store.state.itemDetail;
+    },
+
+    itemId() {
+      return this.$route.params.id;
     },
   },
 };

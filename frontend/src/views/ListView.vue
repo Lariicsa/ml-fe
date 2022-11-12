@@ -4,7 +4,7 @@
       <CardResume
         v-for="itemData in currentFoundItems"
         :item="itemData"
-        :key="itemData.title"
+        :key="itemData.id"
         @click="getItemDetail(itemData)"
       />
     </div>
@@ -54,9 +54,11 @@ export default {
       }
     },
 
-    getItemDetail(itemData){
-      console.log(itemData)
-    }
+    getItemDetail(itemData) {
+      this.$store.dispatch("getProductDetail", itemData.id);
+      this.$router.push({ name: "DetailView", params: { id: itemData.id } });
+      console.log(itemData);
+    },
   },
 
   computed: {
