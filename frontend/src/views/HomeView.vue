@@ -7,7 +7,6 @@
 <script>
 import BreadCrumb from "@/components/Breadcrumb"
 
-import { mapActions } from 'vuex';
 export default {
   name: "HomeView",
 
@@ -29,8 +28,5 @@ export default {
     },
   },
 
-  methods:{
-    ...mapActions(["getProductSearch"])
-  }
 };
 </script>

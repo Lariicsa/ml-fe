@@ -32,7 +32,6 @@ export default new Vuex.Store({
         });
         commit("SET_FOUND_ITEMS", ITEMS);
         commit("SET_CATEGORIES", DATA.categories);
-        console.log("res", DATA);
       } catch (error) {
         console.log(error);
       }
@@ -52,8 +51,6 @@ export default new Vuex.Store({
           imageSource: ITEM.picture,
         };
         commit("SET_ITEM_DETAIL", DATA);
-        console.log("DAta", DATA);
-        console.log("item", ITEM);
       } catch (error) {
         console.log(error);
       }

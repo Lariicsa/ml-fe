@@ -25,15 +25,6 @@ export default {
     CardResume,
   },
 
-  props: {
-    urlText: {
-      type: String,
-    },
-    textTyped: {
-      type: String,
-    },
-  },
-
   head: {
     title: function () {
       return {
@@ -49,7 +40,7 @@ export default {
   methods: {
     getSeacrhOnLoad() {
       if (this.textTyped !== "") {
-        this.textTyped = this.textInPath;
+        this.$store.dispatch("getProductSearch", this.textInPath);
       }
     },
 
